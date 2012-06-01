@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  notes: MyText
+  theme_id: 1
+  completed: false
+
+two:
+  name: MyString
+  notes: MyText
+  theme_id: 1
+  completed: false

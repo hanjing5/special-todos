@@ -1,0 +1,3 @@
+== Welcome to Rails
+
+A simple todo app with RPG journal style.
