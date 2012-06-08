@@ -1,0 +1,3 @@
+%ul{:id=>"StepsOf#{entry.id}"}
+  - entry.steps.each do |step|
+    = render 'step', :step=>step

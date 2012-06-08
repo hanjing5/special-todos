@@ -1,0 +1,12 @@
+<script>
+    function entry_form(id, count){
+        var list_of_forms = [];
+
+        <% @themes.each do |theme|%>
+            var tmp = "<%= escape_javascript( render 'entries/entry_form', :theme=>theme, :id=>theme.id )%>";
+            list_of_forms.push(tmp); 
+        <% end %>
+
+        $(id).append(list_of_forms[count-1]);
+    }
+</script>

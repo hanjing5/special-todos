@@ -1,0 +1,5 @@
+= form_for @entry, :remote=>true do |f|
+  = f.text_field :name, :placeholder=>'title'
+  = f.text_field :notes, :placeholder=>'notes'
+  = f.hidden_field :theme_id, :value=>id
+  = f.submit

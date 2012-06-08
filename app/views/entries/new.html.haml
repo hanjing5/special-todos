@@ -1,0 +1,9 @@
+%h1 Entries#new
+%p Find me in app/views/entries/new.html.haml
+
+
+= form_for @entry do |f|
+  = f.text_field :name
+  = f.text_area :notes
+  = select("entry","theme_id", Theme.all.collect {|c| [c.name, c.id]}, {:include_blank=>true})
+  = f.submit
