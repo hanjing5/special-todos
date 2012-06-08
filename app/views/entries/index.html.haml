@@ -6,10 +6,12 @@
     %div{:class=>"EntryForm#{theme.id}"}
       %li 
         = link_to theme.name, '#'
+        %button{:onclick=>"$(\"#EntriesContainer#{theme.id}\").append(\"#{escape_javascript( render 'entries', :theme=>theme)}\");"}
+          show
         %button{:onclick=>"entry_form('.EntryForm#{theme.id}', #{theme.id})"}
           new entry
-        %div
-          = render 'entries', :theme=>theme
+        %div{:id=>"EntriesContainer#{theme.id}"}
+          //= render 'entries', :theme=>theme
 
 = render 'entries/index_script'
 

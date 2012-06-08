@@ -1,6 +1,7 @@
 class StepsController < ApplicationController
   def new
       @step = Entry.find(params[:entry_id]).steps.new
+        @entry = Entry.new
   end
 
   def create
@@ -17,6 +18,7 @@ class StepsController < ApplicationController
 
   def show
       @step = Step.find(params[:step])
+        @entry = Entry.new
   end
 
   def destroy
@@ -31,5 +33,6 @@ class StepsController < ApplicationController
   end
 
   def index
+        @entry = Entry.new
   end
 end

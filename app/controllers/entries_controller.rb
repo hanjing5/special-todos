@@ -14,6 +14,9 @@ class EntriesController < ApplicationController
   end
 
   def create
+      # add this for prevent nil error when rendering
+      # partials
+      @step = Step.new
     @entry = Entry.new(params[:entry])
     @entry.save
     respond_to do |format|

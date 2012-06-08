@@ -1,0 +1,3 @@
+%li{:id=>"Step#{step.id}"}
+  = step.name
+  = link_to 'delete', entry_step_path(step.entry_id, step.id),:method=>'delete', :remote=>true,:confirm=>'are you sure?'
