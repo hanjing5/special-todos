@@ -7,9 +7,10 @@ gem 'twitter-bootstrap-rails'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'devise'
 gem 'paperclip'
 gem 'haml-rails'
-
+gem 'annotate', '~>2.4.1.beta'
 
 # Gems used only for assets and not required
 # in production environments by default.
