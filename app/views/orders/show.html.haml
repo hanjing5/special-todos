@@ -1,0 +1,7 @@
+= form_for @beverage, :url=>orders_path,:method=>'post' do |f|
+  = f.text_field :name, :value=>@beverage.name
+  = f.text_field 'id', :value=>@beverage.id
+  %p
+    = number_to_currency @beverage.price.to_f/100
+  = f.hidden_field :price, :value=>@beverage.price.to_f/100
+  = f.submit 'Purchase!'

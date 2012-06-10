@@ -1,0 +1,10 @@
+%table{:style=>'width:100%'}
+  -@orders.each do |o|
+    %tr
+      %td
+        = Beverage.find(o.beverage_id).name
+      %td
+        %button
+          call
+      %td
+        = link_to 'picked-up', order_path(:id=>o.id), :method=>'delete'
