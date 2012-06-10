@@ -13,9 +13,10 @@ Todo::Application.routes.draw do
 
 #  devise_for :users
 
-resources :entries do 
-    resources :steps
-end
+    resources :entries do 
+        resources :steps
+        match 'steps/:id/done' => 'steps#done', :as=>'done_steps',:via=>'post'
+    end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

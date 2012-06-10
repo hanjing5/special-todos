@@ -16,6 +16,17 @@ class StepsController < ApplicationController
       end
   end
 
+  def done
+    @step = Step.find(params[:id])
+    @step.completed = true
+    @step.save
+
+    respond_to do |format|
+        format.js
+        format.html
+    end
+  end
+
   def show
       @step = Step.find(params[:step])
         @entry = Entry.new

@@ -1,3 +1,11 @@
-%li{:id=>"Step#{step.id}"}
-  = step.name
-  = link_to 'delete', entry_step_path(step.entry_id, step.id),:method=>'delete', :remote=>true,:confirm=>'are you sure?'
+
+- if step.completed
+  %li{:id=>"Step#{step.id}", :style=>"text-decoration:line-through"}
+    = step.name
+    = render 'steps/step_done_form',:step_id => step.entry_id, :id=>step.id
+    = link_to 'delete', entry_step_path(step.entry_id, step.id),:method=>'delete', :remote=>true,:confirm=>'are you sure?'
+-else
+  %li{:id=>"Step#{step.id}"}
+    = step.name
+    = render 'steps/step_done_form',:step_id => step.entry_id, :id=>step.id
+    = link_to 'delete', entry_step_path(step.entry_id, step.id),:method=>'delete', :remote=>true,:confirm=>'are you sure?'

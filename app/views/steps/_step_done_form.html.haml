@@ -1,0 +1,2 @@
+= form_for @step, :html=>{:id=>"DoneStepFormOf#{id}"},:url=>entry_done_steps_path(step_id,id),:remote=>true do |f|
+  = f.submit 'done'
