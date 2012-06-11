@@ -1,0 +1,8 @@
+%h1 Places#new
+%p Find me in app/views/places/new.html.haml
+
+
+=form_for @place do |f|
+  =f.text_field :name
+  =f.text_field :desc
+  =f.submit 'Add'

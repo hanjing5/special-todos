@@ -1,0 +1,5 @@
+%h1 Places#index
+%p Find me in app/views/places/index.html.haml
+
+- @places.each do |p|
+  =link_to p.name, place_path(p.id)

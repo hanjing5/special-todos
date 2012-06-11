@@ -1,0 +1,19 @@
+%h1 Places#show
+%p Find me in app/views/places/show.html.haml
+
+%table{:class=>'table'}
+  - @place.products.each do |p|
+    %tr
+      %td
+        = p.name
+      %td
+        = number_to_currency p.price
+
+= form_for @product, :url=>place_products_path(@place.id) do |f|
+  name
+  = f.text_field :name
+  price
+  = f.text_field :price
+  description
+  = f.text_field :desc
+  = f.submit
