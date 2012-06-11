@@ -3,6 +3,7 @@ class Merchant < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
 	has_many :places
+  has_many :orders
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

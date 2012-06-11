@@ -1,15 +1,11 @@
 Pos::Application.routes.draw do
 
   get "products/new"
-
   get "products/show"
-
   get "products/index"
 
   get "places/new"
-
   get "places/show"
-
   get "places/index"
 
   devise_for :customers
@@ -18,9 +14,11 @@ Pos::Application.routes.draw do
   devise_for :merchants
 
   devise_scope :merchants do
-	resources :places do
-		resources :products
-	end
+    resources :places do
+      resources :products do 
+        resources :orders
+      end
+    end
   end
 
   # The priority is based upon order of creation:

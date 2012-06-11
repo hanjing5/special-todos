@@ -13,5 +13,8 @@ end
 #  beverage_id :string(255)
 #  created_at  :datetime        not null
 #  updated_at  :datetime        not null
+#  customer_id :integer
+#  merchant_id :integer
+#  redeemed    :boolean
 #
 

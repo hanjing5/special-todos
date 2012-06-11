@@ -3,11 +3,15 @@
 
 %table{:class=>'table'}
   - @place.products.each do |p|
-    %tr
-      %td
-        = p.name
-      %td
-        = number_to_currency p.price
+    -if not p.id.nil?
+      %tr
+        %td
+          = p.name
+        %td
+          = number_to_currency p.price
+        %td
+          = form_for p.orders.new, :url=>place_product_orders_path(p.place_id, p.id) do |f|
+            = f.submit 'buy'
 
 = form_for @product, :url=>place_products_path(@place.id) do |f|
   name

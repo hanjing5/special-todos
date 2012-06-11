@@ -7,9 +7,14 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.create!(:beverage_id=>params[:beverage]['id'])
-    redirect_to beverages_path
+    @product = Product.find(params[:id])
+    @place = Place.find(params[:place_id])
+    @place.orders.new(params[:order])
+    @place.save
+
+    redirect_to place_path(@place.id)
   end
+
   def index
   end
 

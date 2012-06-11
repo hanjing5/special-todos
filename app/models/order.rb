@@ -1,6 +1,8 @@
 class Order < ActiveRecord::Base
-    belongs_to :beverage
-  attr_accessible :beverage_id
+  belongs_to :products
+  belongs_to :merchants
+  belongs_to :customers
+  attr_accessible :merchant_id, :customer_id
 end
 # == Schema Information
 #
@@ -10,5 +12,8 @@ end
 #  beverage_id :string(255)
 #  created_at  :datetime        not null
 #  updated_at  :datetime        not null
+#  customer_id :integer
+#  merchant_id :integer
+#  redeemed    :boolean
 #
 
