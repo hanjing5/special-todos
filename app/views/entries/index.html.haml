@@ -1,17 +1,16 @@
 %h1 
   =link_to 'To Do List', root_path
 
-%ul
-  - @themes.each do |theme|
-    %div{:class=>"EntryForm#{theme.id}"}
-      %li 
-        = link_to theme.name, '#'
-        %button{:onclick=>"$(\"#EntriesContainer#{theme.id}\").append(\"#{escape_javascript( render 'entries', :theme=>theme)}\");"}
-          show
-        %button{:onclick=>"entry_form('.EntryForm#{theme.id}', #{theme.id})"}
-          new entry
-        %div{:id=>"EntriesContainer#{theme.id}"}
-          //= render 'entries', :theme=>theme
+- @themes.each do |theme|
+  %div{:class=>"EntryForm#{theme.id}"}
+    %div{:class=>"EntryList"}
+      = link_to theme.name, '#'
+      %button{:onclick=>"$(\"#EntriesContainer#{theme.id}\").append(\"#{escape_javascript( render 'entries', :theme=>theme)}\");", :class=>'btn'}
+        show
+      %button{:onclick=>"entry_form('.EntryForm#{theme.id}', #{theme.id})", :class=>'btn'}
+        new entry
+      %div{:id=>"EntriesContainer#{theme.id}"}
+        //= render 'entries', :theme=>theme
 
 = render 'entries/index_script'
 

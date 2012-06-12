@@ -11,3 +11,13 @@
  *= require_self
  *= require_tree .
 */
+table{
+    width:100%;
+}
+.EntryList{
+    width:100%;
+}
+li{
+    width:100%;
+}
+
