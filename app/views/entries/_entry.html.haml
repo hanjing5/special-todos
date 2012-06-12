@@ -1,4 +1,4 @@
-%div{:id=>"Entry#{entry.id}"}
+%li{:id=>"Entry#{entry.id}"}
   = entry.name
   %button{:onclick=>"$('#NewStepFormOf#{entry.id}').show();", :class=>'btn'}
     new step
