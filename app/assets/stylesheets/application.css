@@ -16,6 +16,7 @@ table{
 }
 .EntryList{
     width:100%;
+    border-top:0px solid #000;
 }
 li{
     width:100%;

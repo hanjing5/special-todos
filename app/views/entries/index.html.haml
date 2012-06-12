@@ -3,14 +3,17 @@
 
 - @themes.each do |theme|
   %div{:class=>"EntryForm#{theme.id}"}
-    %div{:class=>"EntryList"}
-      = link_to theme.name, '#'
-      %button{:onclick=>"$(\"#EntriesContainer#{theme.id}\").append(\"#{escape_javascript( render 'entries', :theme=>theme)}\");", :class=>'btn'}
-        show
-      %button{:onclick=>"entry_form('.EntryForm#{theme.id}', #{theme.id})", :class=>'btn'}
-        new entry
-      %div{:id=>"EntriesContainer#{theme.id}"}
-        //= render 'entries', :theme=>theme
+    %table{:class=>"EntryList table"}
+      %tr
+        %td
+          = link_to theme.name, '#'
+        %td{:class=>"pull-right"}
+          %button{:onclick=>"$(\"#EntriesContainer#{theme.id}\").append(\"#{escape_javascript( render 'entries', :theme=>theme)}\");", :class=>'btn'}
+            show
+          %button{:onclick=>"entry_form('.EntryForm#{theme.id}', #{theme.id})", :class=>'btn'}
+            new entry
+    %div{:id=>"EntriesContainer#{theme.id}"}
+      //= render 'entries', :theme=>theme
 
 = render 'entries/index_script'
 

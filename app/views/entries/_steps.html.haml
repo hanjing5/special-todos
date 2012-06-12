@@ -1,4 +1,4 @@
-%ul{:id=>"StepsOf#{entry.id}"}
+%div{:id=>"StepsOf#{entry.id}"}
   = render 'steps/step_form', :id => entry.id
   %table
     -entry.steps.each do |step|
