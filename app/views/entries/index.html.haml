@@ -7,7 +7,7 @@
       %tr
         %td
           = link_to theme.name, '#'
-        %td{:class=>"pull-right"}
+        %td{:style=>"text-align:right"}
           %button{:onclick=>"$(\"#EntriesContainer#{theme.id}\").append(\"#{escape_javascript( render 'entries', :theme=>theme)}\");", :class=>'btn'}
             show
           %button{:onclick=>"entry_form('.EntryForm#{theme.id}', #{theme.id})", :class=>'btn'}

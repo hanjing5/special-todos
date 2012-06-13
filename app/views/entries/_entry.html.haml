@@ -1,7 +1,11 @@
 %li{:id=>"Entry#{entry.id}"}
-  = entry.name
-  %button{:onclick=>"$('#NewStepFormOf#{entry.id}').show();", :class=>'btn'}
-    new step
-  = link_to 'delete', entry_path(entry.id),:method=>'delete', :remote=>true,:confirm=>'are you sure?',:class=>'btn'
+  %table
+    %tr
+      %td
+        %h3= entry.name
+      %td{:class=>"pull-right"}
+        %button{:onclick=>"$('#NewStepFormOf#{entry.id}').show();", :class=>'btn'}
+          new step
+        = link_to 'delete', entry_path(entry.id),:method=>'delete', :remote=>true,:confirm=>'are you sure?',:class=>'btn'
   = render 'steps', :entry=>entry
 

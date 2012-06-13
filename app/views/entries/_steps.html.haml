@@ -1,5 +1,5 @@
 %div{:id=>"StepsOf#{entry.id}"}
   = render 'steps/step_form', :id => entry.id
-  %table
+  %table{:class=>'table'}
     -entry.steps.each do |step|
       = render 'steps/step', :step => step
