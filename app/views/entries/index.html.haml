@@ -1,19 +1,21 @@
 %h1 
   =link_to 'To Do List', root_path
-
-- @themes.each do |theme|
-  %div{:class=>"EntryForm#{theme.id}"}
-    %table{:class=>"EntryList table"}
-      %tr
-        %td
-          = link_to theme.name, '#'
-        %td{:style=>"text-align:right"}
-          %button{:onclick=>"$(\"#EntriesContainer#{theme.id}\").append(\"#{escape_javascript( render 'entries', :theme=>theme)}\");", :class=>'btn'}
-            show
-          %button{:onclick=>"entry_form('.EntryForm#{theme.id}', #{theme.id})", :class=>'btn'}
-            new entry
-    %div{:id=>"EntriesContainer#{theme.id}"}
-      //= render 'entries', :theme=>theme
+.row-fluid
+  #sideBarLeft{:class=>"span3"}
+    - @themes.each do |theme|
+      %div{:class=>"EntryForm#{theme.id}"}
+        %table{:class=>"EntryList table"}
+          %tr
+            %td
+              = link_to theme.name, '#'
+            %td{:style=>"text-align:right"}
+              %button{:onclick=>"$(\"#mainContent\").html(\"#{escape_javascript( render 'entries', :theme=>theme)}\");", :class=>'btn'}
+                show
+              %button{:onclick=>"entry_form('.EntryForm#{theme.id}', #{theme.id})", :class=>'btn'}
+                new entry
+        %div{:id=>"EntriesContainer#{theme.id}"}
+          //= render 'entries', :theme=>theme
+  #mainContent{:class=>"span9"}
 
 = render 'entries/index_script'
 

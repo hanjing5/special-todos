@@ -17,6 +17,9 @@ table{
 .right{
     text-align:right;
 }
+#sideBarLeft{
+    border-right:1px solid #f3f3f3;
+}
 .EntryList{
     width:100%;
     border-top:0px solid #000;
